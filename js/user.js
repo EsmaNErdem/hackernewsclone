@@ -24,7 +24,8 @@ async function login(evt) {
   $loginForm.trigger("reset");
 
   saveUserCredentialsInLocalStorage();
-  updateUIOnUserLogin();
+  updateUIOnUserLogin();  
+  location.reload();
 }
 
 $loginForm.on("submit", login);
@@ -45,7 +46,7 @@ async function signup(evt) {
 
   saveUserCredentialsInLocalStorage();
   updateUIOnUserLogin();
-
+  location.reload();
   $signupForm.trigger("reset");
 }
 

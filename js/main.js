@@ -11,9 +11,11 @@ const $favStoriesList = $("#fav-stories-list");
 const $userStoriesList = $("#user-stories-list")
 const $storiesLists = $(".stories-list");
 
+const $signUpForm = $("#signup-form")
 const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 const $storyForm = $("#story-form")
+
 
 const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");
