@@ -1,5 +1,7 @@
 # Hackernews Clone
 
+LIVE: https://esmanerdem.github.io/hackernewsclone/
+
 This project is a Hackernews clone that allows users to browse and interact with a list of stories retrieved from the Hack or Snooze API. Users can sign up, log in, create their own stories, add/delete stories to/from their favorites, and delete their own stories.
 
 ## Technologies Used
