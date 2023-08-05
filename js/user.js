@@ -17,15 +17,19 @@ async function login(evt) {
   const username = $("#login-username").val();
   const password = $("#login-password").val();
 
-  // User.login retrieves user info from API and returns User instance
-  // which we'll make the globally-available, logged-in user.
-  currentUser = await User.login(username, password);
+  try {
+    // User.login retrieves user info from API and returns User instance
+    // which we'll make the globally-available, logged-in user.
+    currentUser = await User.login(username, password);
 
-  $loginForm.trigger("reset");
-
-  saveUserCredentialsInLocalStorage();
-  updateUIOnUserLogin();  
-  location.reload();
+    $loginForm.trigger("reset");
+    saveUserCredentialsInLocalStorage();
+    updateUIOnUserLogin();
+    location.reload();
+  } catch (error) {
+    // If an error occurs during login, display an error message to the user
+    alert("Login failed. Please check your username and password and try again.");
+  }
 }
 
 $loginForm.on("submit", login);
@@ -40,6 +44,7 @@ async function signup(evt) {
   const username = $("#signup-username").val();
   const password = $("#signup-password").val();
 
+  try {
   // User.signup retrieves user info from API and returns User instance
   // which we'll make the globally-available, logged-in user.
   currentUser = await User.signup(username, password, name);
@@ -48,6 +53,10 @@ async function signup(evt) {
   updateUIOnUserLogin();
   location.reload();
   $signupForm.trigger("reset");
+  } catch (error) {
+    // If an error occurs during login, display an error message to the user
+    alert("Signup failed. Please try again with different username and password.");
+  }
 }
 
 $signupForm.on("submit", signup);
